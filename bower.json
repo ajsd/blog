@@ -1,15 +1,15 @@
 {
-  "name": "blogreader",
-  "version": "0.0.0",
-  "main": "js/main.js",
+  "name": "ajsd-blog",
+  "version": "0.0.1",
+  "main": "app/js/main.js",
   "ignore": [
     "**/.*",
     "node_modules",
-    "components"
+    "app/components"
   ],
   "dependencies": {
     "angular": "~1.0.7",
     "angular-markdown": "~0.0.1",
-    "angular-jsonrpc": "https://github.com/arunjitsingh/bower-jsonrpc-ng#~0.0.1-alpha"
+    "angular-jsonrpc": "~0.1.0"
   }
 }
