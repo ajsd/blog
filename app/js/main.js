@@ -20,7 +20,7 @@ main.config([
             controller: 'EntriesCtrl'
           }).
           when('/writer', {
-            templateUrl: '/views/writer.html'
+            templateUrl: 'views/writer.html'
           }).
           otherwise({redirectTo: '/'});
     }
