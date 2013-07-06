@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2013-07-07 03:59:00
+
+CACHE:
+js/*.js
+css/*.css
+images/*
+
+NETWORK:
+index.html
