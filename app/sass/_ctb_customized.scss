@@ -1,0 +1,54 @@
+// Colors
+$blue:                  #3364cd;
+$green:                 #46c046;
+$red:                   #bd362d;
+$linkColor:             #32c;
+
+$lineColor:             #e5e5e5;
+
+// Typography
+$baseFontSize:          13px;
+$baseLineHeight:        21px;
+
+// Borders
+$baseBorderRadius:      2px;
+$borderRadiusLarge:     4px;
+$borderRadiusSmall:     1px;
+
+// Table
+$tableBackgroundHover:  lighten($yellow, 35%);
+$tableBorder:           $lineColor;
+
+// Buttons
+$btnBorder:                         transparent;
+$btnInfoBackground:                 adjust_hue($blue, 10);
+$btnInfoBackgroundHighlight:        lighten($btnInfoBackground, 10%);
+$btnSuccessBackground:              adjust_hue($green, 10);
+$btnSuccessBackgroundHighlight:     lighten($btnSuccessBackground, 10%);
+$btnDangerBackground:               adjust_hue($red, 10);
+$btnDangerBackgroundHighlight:      lighten($btnDangerBackground, 10%);
+
+// Forms
+$inputBorder:                   transparent;
+$inputHeight:                   $baseLineHeight;
+
+// Sprite icons path
+$iconSpritePath:          "glyphicons-halflings.png";
+$iconWhiteSpritePath:     "glyphicons-halflings-white.png";
+
+// Hr border color
+$hrBorder:                $lineColor;
+
+// Form states and alerts
+$warningText:             $grayDark;
+$warningBackground:       lighten($yellow, 10%);
+
+$errorText:               $white;
+$errorBackground:         lighten($red, 10%);
+
+$successText:             $grayDark;
+$successBackground:       lighten($green, 10%);
+
+$infoText:                $white;
+$infoBackground:          lighten($blue, 10%);
+
