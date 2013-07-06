@@ -30,7 +30,8 @@ module.exports = function(grunt) {
           src: [
             '*.{ico,txt}',
             'images/*',
-            'fonts/*'
+            'fonts/*',
+            'views/*'
           ]
         }]
       }
@@ -67,6 +68,10 @@ module.exports = function(grunt) {
         files: {
           '<%= paths.dist %>/js/app.js': [
             '<%= paths.app %>/js/{,*/}*.js'
+          ],
+          '<%= paths.dist %>/js/deps.js': [
+            '<%= paths.app %>/components/angular-markdown/angular.markdown.js',
+            '<%= paths.app %>/components/angular-jsonrpc/jsonrpc.min.js'
           ]
         }
       },
@@ -109,9 +114,9 @@ module.exports = function(grunt) {
       }
     },
     useminPrepare: {
-      html: '<%= paths.app %>/index.html',
+      html: '<%= paths.app %>/*.html',
       options: {
-        dest: 'dist'
+        dest: '<%= paths.dist %>'
       }
     },
     usemin: {
@@ -125,7 +130,7 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= paths.dist %>',
+          cwd: '<%= paths.app %>',
           src: '*.html',
           dest: '<%= paths.dist %>'
         }]
@@ -204,15 +209,15 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     //'jshint',
-    'useminPrepare',
     'copy',
     'compass:dist',
+    'useminPrepare',
+    'usereplace',
     'concat',
     'ngmin',
     'uglify',
     'rev',
     'usemin',
-    'usereplace',
     'htmlmin'
   ]);
 };
