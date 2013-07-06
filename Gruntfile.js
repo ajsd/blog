@@ -36,6 +36,21 @@ module.exports = function(grunt) {
         }]
       }
     },
+    replace: {
+      options: {
+        variables: {
+          timestamp: '<%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>'
+        },
+        prefix: '@@'
+      },
+      dist: {
+        files: {
+          '<%= paths.dist %>/cache.manifest': [
+            '<%= paths.app %>/cache.manifest'
+          ]
+        }
+      }
+    },
     compass: {
       options: {
         require: 'compass_twitter_bootstrap',
@@ -197,6 +212,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-ngmin');
+  grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-rev');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadTasks('./tasks');
@@ -206,6 +222,7 @@ module.exports = function(grunt) {
     'clean',
     //'jshint',
     'copy',
+    'replace',
     'compass:dist',
     'useminPrepare',
     'usereplace',

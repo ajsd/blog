@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# @@timestamp
+
+CACHE:
+js/*.js
+css/*.css
+images/*
+
+NETWORK:
+index.html
