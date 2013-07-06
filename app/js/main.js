@@ -16,7 +16,7 @@ main.config([
       $locationProvider.html5Mode(false);
       $routeProvider.
           when('/', {
-            templateUrl: '/views/entries.html',
+            templateUrl: 'views/entries.html',
             controller: 'EntriesCtrl'
           }).
           when('/writer', {
