@@ -7,11 +7,12 @@
  * @constructor
  * @ngInject
  */
-var EntriesCtrl = function($scope, blogService) {
+function EntriesCtrl($scope, blogService) {
   $scope.entries = [];
 
   blogService.search({'q': '*'}).
       success(function(result) {
         $scope.entries = result.entries;
       });
-};
+}
+EntriesCtrl['$inject'] = ['$scope', 'blogService'];

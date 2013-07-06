@@ -68,10 +68,6 @@ module.exports = function(grunt) {
         files: {
           '<%= paths.dist %>/js/app.js': [
             '<%= paths.app %>/js/{,*/}*.js'
-          ],
-          '<%= paths.dist %>/js/deps.js': [
-            '<%= paths.app %>/components/angular-markdown/angular.markdown.js',
-            '<%= paths.app %>/components/angular-jsonrpc/jsonrpc.min.js'
           ]
         }
       },
@@ -220,4 +216,6 @@ module.exports = function(grunt) {
     'usemin',
     'htmlmin'
   ]);
+
+  grunt.registerTask('dev', ['compass:dev', 'watch']);
 };
