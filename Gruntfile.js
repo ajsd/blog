@@ -196,9 +196,23 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-      files: '<%= paths.app %>/sass/**/*.scss',
-      tasks: ['compass:dev']
+        files: '<%= paths.app %>/sass/**/*.scss',
+        tasks: ['compass:dev']
+      },
     },
+    connect: {
+      dev: {
+        options: {
+          port: 9000,
+          base: '<%= paths.app %>'
+        }
+      },
+      dist: {
+        options: {
+          port: 9001,
+          base: '<%= paths.dist %>'
+        }
+      }
     }
   });
 
@@ -206,6 +220,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -234,5 +249,9 @@ module.exports = function(grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('dev', ['compass:dev', 'watch']);
+  grunt.registerTask('serve', [
+    'compass:dev',
+    'connect:dev',
+    'watch:css',
+  ]);
 };
