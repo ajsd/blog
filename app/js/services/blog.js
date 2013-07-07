@@ -1,8 +1,6 @@
-'use strict';
-
 /**
  * @name blogService
- * @param jsonrpc
+ * @param {jsonrpc} jsonrpc
  * @constructor
  * @ngInject
  */

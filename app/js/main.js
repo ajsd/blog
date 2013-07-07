@@ -1,5 +1,3 @@
-'use strict';
-
 /** main Module */
 var main = angular.module('main', ['angular-markdown', 'jsonrpc']);
 
@@ -9,8 +7,7 @@ main.constant(
         'http://localhost:8080' :
         'https://arunjit-goblog.appspot.com');
 
-main.config([
-    '$routeProvider', '$locationProvider', 'jsonrpcProvider', 'serverHost',
+main.config(
     function($routeProvider, $locationProvider, jsonrpcProvider, serverHost) {
       jsonrpcProvider.setBasePath(serverHost + '/rpc');
       $locationProvider.html5Mode(false);
@@ -24,12 +21,7 @@ main.config([
           }).
           otherwise({redirectTo: '/'});
     }
-]);
-
-main.run(['$rootScope', 'serverHost', function($rootScope, serverHost) {
-  $rootScope.serverHost = serverHost;
-  $rootScope.baseHref = window.location.href.replace(/\/(?:#\/.+)?$/, '');
-}]);
+);
 
 main.service('blogService', BlogService);
 main.controller('EntriesCtrl', EntriesCtrl);
