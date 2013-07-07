@@ -4,7 +4,7 @@
  * @name blogService
  * RPC service for the "blog" API.
  */
-angular.module('main').service('BlogService',
+angular.module('main').service('blogService',
     function(jsonrpc) {
       var service = jsonrpc.newService('blog');
       this.search = service.createMethod('Search');
