@@ -2,32 +2,28 @@
 
 /**
  * @name WriterCtrl
- * @param {angular.Scope} $scope
- * @param {angular.Location} $location
- * @param {BlogService} blogService
- * @constructor
- * @ngInject
+ * Controller for the writer view.
  */
-function WriterCtrl($scope, $location, blogService) {
-  $scope.writer = this;
+angular.module('main').controller('WriterCtrl',
+    function($scope, $location, blogService) {
+      var writer = $scope.writer = {};
 
-  this.md = '';
-  this.error = '';
-  this.saving = false;
+      writer.md = '';
+      writer.error = '';
+      writer.saving = false;
 
-  this.save = function(md) {
-    var self = this;
-    this.error = '';
-    this.saving = true;
-    blogService.save({md: md}).
-        success(function() {
-          self.saving = false;
-          $location.path('/');
-        }).
-        error(function(err) {
-          self.error = err.message;
-          self.saving = false;
-        });
-  };
-}
-WriterCtrl.$inject = ['$scope', '$location', 'blogService'];
+      writer.save = function(md) {
+        writer.error = '';
+        writer.saving = true;
+        blogService.save({md: md}).
+            success(function() {
+              writer.saving = false;
+              $location.path('/');
+            }).
+            error(function(err) {
+              writer.error = err.message;
+              writer.saving = false;
+            });
+      };
+    }
+);

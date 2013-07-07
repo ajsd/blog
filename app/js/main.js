@@ -1,16 +1,16 @@
 'use strict';
 
 /** main Module */
-var main = angular.module('main', ['angular-markdown', 'jsonrpc']);
-
-main.constant(
-    'serverHost',
-    (window.location.href.indexOf('localhost') > -1) ?
-        'http://localhost:8080' :
-        'https://arunjit-goblog.appspot.com');
-
-main.config(
-    function($routeProvider, $locationProvider, jsonrpcProvider, serverHost) {
+angular.module('main', ['angular-markdown', 'jsonrpc']).
+    constant('serverHost',
+      (window.location.href.indexOf('localhost') > -1) ?
+          'http://localhost:8080' :
+          'https://arunjit-goblog.appspot.com').
+    config(function(
+        $routeProvider,
+        $locationProvider,
+        jsonrpcProvider,
+        serverHost) {
       jsonrpcProvider.setBasePath(serverHost + '/rpc');
       $locationProvider.html5Mode(false);
       $routeProvider.
@@ -23,9 +23,4 @@ main.config(
             controller: 'WriterCtrl'
           }).
           otherwise({redirectTo: '/'});
-    }
-);
-
-main.service('blogService', BlogService);
-main.controller('EntriesCtrl', EntriesCtrl);
-main.controller('WriterCtrl', WriterCtrl);
+    });

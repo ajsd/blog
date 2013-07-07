@@ -2,13 +2,12 @@
 
 /**
  * @name blogService
- * @param {jsonrpc} jsonrpc
- * @constructor
- * @ngInject
+ * RPC service for the "blog" API.
  */
-function BlogService(jsonrpc) {
-  var service = jsonrpc.newService('blog');
-  this.search = service.createMethod('Search');
-  this.save = service.createMethod('Save');
-}
-BlogService.$inject = ['jsonrpc'];
+angular.module('main').service('BlogService',
+    function(jsonrpc) {
+      var service = jsonrpc.newService('blog');
+      this.search = service.createMethod('Search');
+      this.save = service.createMethod('Save');
+    }
+);
