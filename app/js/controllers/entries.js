@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @name EntriesCtrl
  * @param {angular.Scope} $scope

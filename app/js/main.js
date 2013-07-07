@@ -1,3 +1,5 @@
+'use strict';
+
 /** main Module */
 var main = angular.module('main', ['angular-markdown', 'jsonrpc']);
 
