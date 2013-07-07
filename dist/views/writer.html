@@ -1,1 +1,3 @@
-<p>WIP</p>
+<textarea class="writer" ng-model="writer.md"></textarea>
+
+<button class="btn btn-success" ng-click="writer.save(writer.md)" ng-disabled="!writer.md || writer.saving">Save</button><span class="error" ng-show="writer.error" ng-bind="writer.error"></span><div class="preview"><h4>Preview</h4><hr><markdown ng-model="writer.md"></markdown></div>
