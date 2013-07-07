@@ -19,7 +19,8 @@ main.config(
             controller: 'EntriesCtrl'
           }).
           when('/writer', {
-            templateUrl: 'views/writer.html'
+            templateUrl: 'views/writer.html',
+            controller: 'WriterCtrl'
           }).
           otherwise({redirectTo: '/'});
     }
@@ -27,3 +28,4 @@ main.config(
 
 main.service('blogService', BlogService);
 main.controller('EntriesCtrl', EntriesCtrl);
+main.controller('WriterCtrl', WriterCtrl);

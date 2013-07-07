@@ -1,8 +1,14 @@
 @import "compass/reset";
+@import "compass/css3";
 @import "compass_twitter_bootstrap";
 @import "ctb_customized";
 
 $headerHeight: 32px;
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 header {
   background-color: $grayLighter;
@@ -41,6 +47,10 @@ header {
   }
 }
 
+.content {
+  height: 100%;
+}
+
 markdown {
   display: block;
   border-top: 1px solid $lineColor;
@@ -49,4 +59,33 @@ markdown {
   &:first-of-type {
     border: none;
   }
+}
+
+textarea {
+  border: none !important;
+  border-bottom: 1px solid $lineColor;
+  @include border-radius(0px);
+  @include box-shadow(none);
+
+  &.writer {
+    background-color: #fffff6;
+    display: block;
+    font-family: monospace;
+    font-size: $fontSizeLarge;
+    height: 50%;
+    width: 100%;
+  }
+  &:focus {
+    border: none !important;
+    outline: none !important;
+    @include box-shadow(none);
+  }
+}
+
+span.error {
+  color: $red;
+}
+
+.preview {
+  margin-top: 20px;
 }
