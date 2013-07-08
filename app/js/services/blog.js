@@ -8,6 +8,6 @@ angular.module('main').service('blogService',
     function(jsonrpc) {
       var service = jsonrpc.newService('blog');
       this.search = service.createMethod('Search');
-      this.save = service.createMethod('Save');
+      this.save = service.createMethod('Save', {withCredentials: true});
     }
 );
